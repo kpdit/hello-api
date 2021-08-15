@@ -14,7 +14,6 @@ init-go: #
 	echo 'export PATH=$$PATH:$${HOME}/go/bin' >> $${HOME}/.zshrc
 
 build: #
-	go env -w GO111MODULE=off
 	go build -o api cmd/main.go
 
 test:
