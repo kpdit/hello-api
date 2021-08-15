@@ -1,9 +1,10 @@
 package main
 
 import (
-	"hello-api/handlers/rest"
 	"log"
 	"net/http"
+
+	"github.com/kpdit/hello-api/handlers/rest"
 )
 
 func main() {

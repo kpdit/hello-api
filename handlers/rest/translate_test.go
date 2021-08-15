@@ -6,7 +6,7 @@ import (
 	"net/http/httptest"
 	"testing"
 
-	"hello-api/handlers/rest"
+	"github.com/kpdit/hello-api/handlers/rest"
 )
 
 func TestTranslateAPI(t *testing.T) {
