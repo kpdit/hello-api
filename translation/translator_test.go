@@ -1,21 +1,72 @@
-package translation_test //
+package translation_test
 
 import (
     "testing"
-    "translation"
+    "hello-api/translation"
 )
 
 func TestTranslate(t *testing.T) {
     // Arrange
-    word := "hello"
-    language := "english"
+    tt := []struct{ //
+        Word string
+        Language string
+        Translation string
+    }{
+        { //
+            Word: "hello",
+            Language: "english",
+            Translation: "hello",
+        },
+        {
+            Word: "hello",
+            Language: "german",
+            Translation: "hallo",
+        },
+        {
+            Word: "hello",
+            Language: "finnish",
+            Translation: "hei",
+        },
+        {
+            Word: "hello",
+            Language: "dutch",
+            Translation: "",
+        },
+        {
+            Word: "bye",
+            Language: "dutch",
+            Translation: "",
+        },
+        {
+            Word: "bye",
+            Language: "german",
+            Translation: "",
+        },
+        {
+            Word: "hello",
+            Language: "German",
+            Translation: "hallo",
+        },
+        {
+            Word: "Hello",
+            Language: "german",
+            Translation: "hallo",
+        },
+        {
+            Word: "hello ",
+            Language: "german",
+            Translation: "hallo",
+        },
+    }
 
-    // Act
-    res := translation.Translate(word, language) //
+    for _, tl := range tt { //
+        // Act
+        res := translation.Translate(tl.Word, tl.Language) //
 
-    // Assert
-    if res != "hello" { //
-        t.Errorf(`expected "hello" but received "%s"`, res) //
+        // Assert
+        if res != tl.Translation { //
+            t.Errorf(`expected "%s" to be translated to "%s" to be "%s" but received "%s"`, tl.Word, tl.Language, tl.Translation, res)
+        }
     }
 }
 
