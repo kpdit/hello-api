@@ -10,7 +10,7 @@ install-go: #
 	rm go$(GO_VERSION).linux-amd64.tar.gz
 
 init-go: #
-	echo 'export PATH=$$PATH:/usr/local/go/bin' >> $${HOME}/zshrc
+	echo 'export PATH=$$PATH:/usr/local/go/bin' >> $${HOME}/.zshrc
 	echo 'export PATH=$$PATH:$${HOME}/go/bin' >> $${HOME}/.zshrc
 
 build: #
