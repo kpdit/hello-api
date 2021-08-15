@@ -14,7 +14,7 @@ init-go: #
 	echo 'export PATH=$$PATH:$${HOME}/go/bin' >> $${HOME}/.zshrc
 
 build: #
-	go test $(go list ./... | grep -v cmd)
+	go test ./...
 
 test:
 	go test ./handlers/rest
